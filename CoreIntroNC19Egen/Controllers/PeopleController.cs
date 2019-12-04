@@ -13,7 +13,7 @@ namespace CoreIntroNC19Egen.Controllers
     {
         private readonly CoreIntroNC19EgenContext _context;
 
-        public PeopleController(CoreIntroNC19EgenContext context)
+        public PeopleController(CoreIntroNC19EgenContext context)   //pga blivit registrerat i DI
         {
             _context = context;
         }
@@ -21,7 +21,7 @@ namespace CoreIntroNC19Egen.Controllers
         // GET: People
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Person.ToListAsync());
+            return View(await _context.Person.ToListAsync());   //körs på databasen
         }
 
         // GET: People/Details/5
